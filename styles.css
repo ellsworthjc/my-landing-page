@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+/* Light/Default Mode */
+:root {
+	--default-transition-duration: 200ms;
+
+	/* Default colors */
+	--main-bg: #e0e0e0;
+	--main-shine: #ffffff;
+	--main-shadow: #bebebe;
+	--text-primary: #1c1c1e;
+	--accent: #4699E6;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+	transition: all var(--default-transition-duration);
+}
+
+/* Light/Default Mode Colors */
+.light {
+	--main-bg: #e0e0e0;
+	--main-shine: #ffffff;
+	--main-shadow: #bebebe;
+	--text-primary: #1c1c1e;
+}
+
+/* Dark Mode Colors */
+.dark {
+	--main-bg: #28282B;
+	--main-shine: #343438;
+	--main-shadow: #1c1c1e;
+	--text-primary: #bebebe;
+}
+
+/* Silly Mode Colors */
+.silly {
+	--main-bg: green;
+	--main-shine: red;
+	--main-shadow: blue;
+	--text-primary: yellow;
+}
+
+body {
+	position: relative;
+	color: var(--text-primary);
+	background-color: var(--main-bg);
+}
+
+section {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	/* background-image: linear-gradient(135deg, var(--main-shadow), var(--main-bg-darker)); */
+}
+
+h1 {
+	font-size: 10vw;
+	font-weight: 900;
+	letter-spacing: 0.33rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: transparent;
+	color: red;
+	color: var(--main-bg);
+	user-select: none;
+}
+
+/* Four Corner Buttons */
+.theme-switcher-container {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+}
+
+.social-container {
+	position: absolute;
+	bottom: 2rem;
+	right: 2rem;
+}
+
+/* Neumorphism Styles */
+.neu-box {
+	--blurScale: 2;
+	--distance: 1rem;
+	padding: var(--distance);
+	border-radius: 2rem;
+	box-shadow: var(--distance) var(--distance) calc(var(--distance) * var(--blurScale)) var(--main-shadow),
+				calc(var(--distance) * -1) calc(var(--distance) * -1) calc(var(--distance) * var(--blurScale)) var(--main-shine);
+}
+
+.neu-text {
+	--blurScale: 3;
+	--distance: 0.3rem;
+	text-shadow:
+		var(--distance) var(--distance) calc(var(--distance) * var(--blurScale)) var(--main-shadow),
+		calc(var(--distance) * -1) calc(var(--distance) * -1) calc(var(--distance) * var(--blurScale)) var(--main-shine);
+}
+
+.neu-button {
+	--blurScale: 3;
+	--distance: 0.3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	appearance: none;
+	font-size: 0.8rem;
+	font-weight: 400;
+	text-decoration: none;
+	padding: 0.75rem 1.25rem;
+	color: var(--text-primary);
+	background: var(--main-bg);
+	border: none;
+	border-radius: 100rem;
+	outline: none;
+	user-select: none;
+	box-shadow: var(--distance) var(--distance) calc(var(--distance) * var(--blurScale)) var(--main-shadow),
+				calc(var(--distance) * -1) calc(var(--distance) * -1) calc(var(--distance) * var(--blurScale)) var(--main-shine);
+	cursor: pointer;
+}
+
+.neu-button:hover,
+.neu-button:focus-visible {
+	--blurScale: 3;
+	--distance: 0.3rem;
+	color: var(--text-primary);
+}
+
+.neu-button:active {
+	box-shadow: var(--distance) var(--distance) calc(var(--distance) * var(--blurScale)) var(--main-shadow),
+				calc(var(--distance) * -1) calc(var(--distance) * -1) calc(var(--distance) * var(--blurScale)) var(--main-shine),
+				var(--distance) var(--distance) calc(var(--distance) * var(--blurScale)) inset var(--main-shadow),
+				calc(var(--distance) * -1) calc(var(--distance) * -1) calc(var(--distance) * var(--blurScale)) inset var(--main-shine);
+}
+
+.secret {
+	--blurScale: 0;
+	--distance: 0rem;
+	color: transparent;
+}
+
+.svg-filter {
+	--blurScale: 3;
+	--distance: 0.3rem;
+	stroke: var(--main-bg);
+	filter: drop-shadow(var(--distance) var(--distance) calc(var(--distance) * var(--blurScale)) var(--main-shadow))
+			drop-shadow(calc(var(--distance) * -1) calc(var(--distance) * -1) calc(var(--distance) * var(--blurScale)) var(--main-shine));
+}
+
+.svg-small {
+	--blurScale: 0.5;
+	--distance: 0.05rem;
+	width: 2rem;
+	height: 2rem;
+}
